@@ -6,6 +6,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -include cmath -static")
 
 include_directories("K:/Python27/include")
+include_directories(".")
 link_directories("K:/Python27/libs")
 
 

@@ -1,8 +1,8 @@
 #include <boost/python.hpp>
 
-const char* greet();
+void videoInit();
 
 BOOST_PYTHON_MODULE(sdl2uipy){
     using namespace boost::python;
-    def("greet", greet);
+    def("video_init", videoInit);
 };

@@ -1,4 +1,5 @@
 #include "SDL2/SDL.h"
+#include "image.h"
 
 class VideoSystem {
 private:
@@ -14,4 +15,5 @@ public:
     }
 
     void videoInit();
+    SDL_Renderer* getRenderer() { return renderer; }
 };

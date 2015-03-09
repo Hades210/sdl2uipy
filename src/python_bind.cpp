@@ -4,3 +4,7 @@
 void videoInit() {
     VideoSystem::getInstance().videoInit();
 }
+
+void flipScreen() {
+    VideoSystem::getInstance().flipScreen();
+}

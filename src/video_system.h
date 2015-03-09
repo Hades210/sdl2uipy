@@ -1,3 +1,6 @@
+#ifndef VIDEO_SYSTEM_H
+#define VIDEO_SYSTEM_H
+
 #include "SDL2/SDL.h"
 #include "image.h"
 
@@ -10,10 +13,13 @@ private:
     SDL_Renderer* renderer;
 public:
     static VideoSystem& getInstance() {
-        VideoSystem videoSystem;
+        static VideoSystem videoSystem;
         return videoSystem;
     }
 
     void videoInit();
+    void flipScreen();
     SDL_Renderer* getRenderer() { return renderer; }
 };
+
+#endif

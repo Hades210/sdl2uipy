@@ -17,8 +17,16 @@ BOOST_PYTHON_MODULE(sdl2uipy) {
 			.staticmethod("from_file");
 
     class_<SDL_Event>("Event")
-            .def_readonly("type", &SDL_Event::type);
+            .def_readonly("type", &SDL_Event::type)
+            .def_readonly("mouse_button", &SDL_Event::button);
+
+    class_<SDL_MouseButtonEvent>("MouseButtonEvent")
+            .def("button", &SDL_MouseButtonEvent::button)
+            .def("state", &SDL_MouseButtonEvent::state)
+            .def("x", &SDL_MouseButtonEvent::x)
+            .def("y", &SDL_MouseButtonEvent::y);
 
 	enum_<SDL_EventType>("EventType")
-			.value("EVENT_TYPE_QUIT", SDL_QUIT);
+			.value("QUIT", SDL_QUIT)
+            .value("MOUSEBUTTON_UP", SDL_MOUSEBUTTONUP);
 }

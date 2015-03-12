@@ -14,7 +14,9 @@ BOOST_PYTHON_MODULE(sdl2uipy) {
     class_<Image>("Image")
             .def("draw", &Image::draw)
             .def("from_file", &Image::fromFile, return_value_policy<manage_new_object>())
-			.staticmethod("from_file");
+			.staticmethod("from_file")
+            .def("get_width", &Image::getWidth)
+            .def("get_height", &Image::getHeight);
 
     class_<SDL_Event>("Event")
             .def_readonly("type", &SDL_Event::type)

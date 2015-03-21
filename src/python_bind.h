@@ -4,12 +4,14 @@
 
 void videoInit();
 void flipScreen();
+bool videoIsInit();
 
 BOOST_PYTHON_MODULE(sdl2uipy) {
     using namespace boost::python;
     def("video_init", videoInit);
     def("flip_screen", flipScreen);
     def("get_event", getEvent, return_value_policy<manage_new_object>());
+    def("video_was_init", videoIsInit);
 	
     class_<Image>("Image")
             .def("draw", &Image::draw)

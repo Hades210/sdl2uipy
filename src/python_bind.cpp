@@ -8,3 +8,7 @@ void videoInit() {
 void flipScreen() {
     VideoSystem::getInstance().flipScreen();
 }
+
+bool videoIsInit() {
+    return SDL_WasInit(SDL_INIT_EVERYTHING) != 0;
+}
